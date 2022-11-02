@@ -1,15 +1,18 @@
 {
   "version": "0.0.0",
   "devDependencies": {
-    "eslint-config-custom": "*",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "tsconfig-custom": "*",
     "typescript": "4.8.4"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --fix --max-warnings 0",
+    "*.{js,jsx,ts,tsx}": "eslint --fix --max-warnings 0",
     "**/*": "prettier --write --ignore-unknown"
   }
 }
