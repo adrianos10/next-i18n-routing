@@ -1,7 +1,16 @@
 {
   "name": "next-i18n-routing",
   "version": "1.0.0",
+  "bin": {
+    "test-run": "dist/test-run.js"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json"
+  },
   "devDependencies": {
+    "@types/klaw-sync": "^6.0.1",
+    "@types/node": "18.11.7",
+    "klaw-sync": "^6.0.0",
     "tsconfig-custom": "*",
     "typescript": "4.8.4"
   }
