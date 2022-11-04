@@ -11,8 +11,9 @@ const pagesPath = path.join(cwd(), PAGES_DIR);
 const skippedPathsRegExp = /(^(_|api|404|500))|^\[(...)?\w*\]$/;
 const fileExtRegExp = /\.(js(x)?|ts(x)?)/;
 const indexPagesRegExp = /(^)?(\/)?index$/;
+const pathMatchRegExp = /\[(\w+)\]/;
+const wildCardPathMatchRegExp = /\[...(\w+)\]/;
 
-// TODO: replace dynamic segments with rewrites equivalent
 const makePathsFromPages = () =>
   klawSync(pagesPath, {
     nodir: true,
@@ -24,6 +25,11 @@ const makePathsFromPages = () =>
         .replace(indexPagesRegExp, ''),
     )
     .filter(Boolean)
-    .flatMap((path) => (!skippedPathsRegExp.test(path) ? path : []));
+    .flatMap((path) => (!skippedPathsRegExp.test(path) ? path : []))
+    .map((path) =>
+      path
+        .replace(pathMatchRegExp, ':$1')
+        .replace(wildCardPathMatchRegExp, ':$1*'),
+    );
 
 export { makePathsFromPages };
