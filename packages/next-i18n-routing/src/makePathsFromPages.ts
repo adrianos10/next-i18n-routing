@@ -7,7 +7,10 @@ import { cwd } from 'process';
 const PAGES_DIR = 'pages';
 
 const pagesPath = path.join(cwd(), PAGES_DIR);
-const skippedPathsRegexp = new RegExp('(^(_|api|404|500))|^\\[(...)?\\w*\\]$');
+
+const skippedPathsRegExp = /(^(_|api|404|500))|^\[(...)?\w*\]$/;
+const fileExtRegExp = /\.(js(x)?|ts(x)?)/;
+const indexPagesRegExp = /(^)?(\/)?index$/;
 
 // TODO: replace dynamic segments with rewrites equivalent
 const makePathsFromPages = () =>
@@ -17,10 +20,10 @@ const makePathsFromPages = () =>
     .map(({ path }) =>
       path
         .replace(`${pagesPath}/`, '')
-        .replace(/\.(js(x)?|ts(x)?)/, '')
-        .replace(/(^)?(\/)?index$/, ''),
+        .replace(fileExtRegExp, '')
+        .replace(indexPagesRegExp, ''),
     )
     .filter(Boolean)
-    .flatMap((path) => (!skippedPathsRegexp.test(path) ? path : []));
+    .flatMap((path) => (!skippedPathsRegExp.test(path) ? path : []));
 
 export { makePathsFromPages };
