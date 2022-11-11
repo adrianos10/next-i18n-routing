@@ -1,0 +1,42 @@
+{
+  "/:username/settings": {
+    "en": "/:username/settings",
+    "de": "/:username/settings",
+    "fr": "/:username/settings"
+  },
+  "/about-us": {
+    "en": "/about-us",
+    "de": "/about-us",
+    "fr": "/about-us"
+  },
+  "/blog/:slug": {
+    "en": "/blog/:slug",
+    "de": "/blog/:slug",
+    "fr": "/blog/:slug"
+  },
+  "/blog/first-post": {
+    "en": "/blog/first-post",
+    "de": "/blog/first-post",
+    "fr": "/blog/first-post"
+  },
+  "/blog": {
+    "en": "/blog",
+    "de": "/blog",
+    "fr": "/blog"
+  },
+  "/dashboard/settings/notifications": {
+    "en": "/dashboard/settings/notifications",
+    "de": "/dashboard/settings/notifications",
+    "fr": "/dashboard/settings/notifications"
+  },
+  "/index-test/index/some-route": {
+    "en": "/index-test/index/some-route",
+    "de": "/index-test/index/some-route",
+    "fr": "/index-test/index/some-route"
+  },
+  "/post/:slug*": {
+    "en": "/post/:slug*",
+    "de": "/post/:slug*",
+    "fr": "/post/:slug*"
+  }
+}

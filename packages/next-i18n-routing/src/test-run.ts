@@ -1,6 +1,12 @@
-import { makePathsFromPages } from './makePathsFromPages';
+// FIXME: used only for testing purposes
 
-const paths = makePathsFromPages();
+import { makeTranslatePathsConfig } from './makeTranslatePathsConfig';
 
-// eslint-disable-next-line no-console
-console.log(paths);
+const testRun = async () => {
+  const result = await makeTranslatePathsConfig();
+
+  // eslint-disable-next-line no-console
+  console.log(result);
+};
+
+testRun();
