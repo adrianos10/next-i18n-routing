@@ -1,12 +1,9 @@
-// FIXME: used only for testing purposes
+// TODO: used only for testing purposes
 
-import { makeTranslatePathsConfig } from './makeTranslatePathsConfig';
+import { parseConfigToNextRewrites } from './parseConfigToNextRewrites';
 
 const testRun = async () => {
-  const result = await makeTranslatePathsConfig();
-
-  // eslint-disable-next-line no-console
-  console.log(result);
+  parseConfigToNextRewrites();
 };
 
 testRun();

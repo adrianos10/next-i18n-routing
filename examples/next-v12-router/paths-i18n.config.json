@@ -6,8 +6,8 @@
   },
   "/about-us": {
     "en": "/about-us",
-    "de": "/about-us",
-    "fr": "/about-us"
+    "de": "/de-about-us",
+    "fr": "/fr-about-us"
   },
   "/blog/:slug": {
     "en": "/blog/:slug",

@@ -3,6 +3,7 @@ import fs from 'fs';
 import { CONFIG_FILENAME } from './consts';
 import { logToConsole } from './logger/logToConsole';
 import { makePathsFromPages } from './makePathsFromPages';
+import { TranslatePathsConfig } from './types';
 import { makePathAbsolute } from './utils/makePathAbsolute';
 import { readNextConfig } from './utils/readNextConfig';
 
@@ -18,20 +19,22 @@ const makeTranslatePathsConfig = async () => {
 
   const paths = makePathsFromPages();
 
-  const translatePathsConfig = paths.reduce<
-    Record<string, Record<string, string>>
-  >((result, path) => {
-    const absolutePath = makePathAbsolute(path);
+  const translatePathsConfig = paths.reduce<TranslatePathsConfig>(
+    (result, path) => {
+      const absolutePath = makePathAbsolute(path);
 
-    return {
-      ...result,
-      [absolutePath]: locales.reduce(
-        (innerResult, locale) => ({ ...innerResult, [locale]: absolutePath }),
-        {},
-      ),
-    };
-  }, {});
+      return {
+        ...result,
+        [absolutePath]: locales.reduce(
+          (innerResult, locale) => ({ ...innerResult, [locale]: absolutePath }),
+          {},
+        ),
+      };
+    },
+    {},
+  );
 
+  // TODO: handle case for existing file - add override options?
   fs.writeFileSync(
     CONFIG_FILENAME,
     JSON.stringify(translatePathsConfig, null, 2),
