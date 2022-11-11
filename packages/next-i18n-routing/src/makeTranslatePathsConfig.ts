@@ -3,8 +3,8 @@ import fs from 'fs';
 import { CONFIG_FILENAME } from './consts';
 import { logToConsole } from './logger/logToConsole';
 import { makePathsFromPages } from './makePathsFromPages';
-import { readNextConfig } from './readNextConfig';
 import { makePathAbsolute } from './utils/makePathAbsolute';
+import { readNextConfig } from './utils/readNextConfig';
 
 const makeTranslatePathsConfig = async () => {
   const { i18n } = await readNextConfig();
@@ -34,7 +34,7 @@ const makeTranslatePathsConfig = async () => {
 
   fs.writeFileSync(
     CONFIG_FILENAME,
-    JSON.stringify(translatePathsConfig, null, 4),
+    JSON.stringify(translatePathsConfig, null, 2),
   );
 };
 
