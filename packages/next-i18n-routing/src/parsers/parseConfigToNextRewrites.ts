@@ -1,8 +1,8 @@
 import { Rewrite } from 'next/dist/lib/load-custom-routes';
 
-import { CONFIG_FILENAME } from './consts';
-import { logToConsole } from './logger/logToConsole';
-import { readTranslatePathsConfig } from './utils/readTranslatePathsConfig';
+import { CONFIG_FILENAME } from '../consts';
+import { logToConsole } from '../logger/logToConsole';
+import { readTranslatePathsConfig } from '../utils/readTranslatePathsConfig';
 
 // TODO: check if all cases are covered
 const parseConfigToNextRewrites = () => {

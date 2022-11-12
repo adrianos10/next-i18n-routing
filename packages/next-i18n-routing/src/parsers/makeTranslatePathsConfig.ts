@@ -1,11 +1,11 @@
 import fs from 'fs';
 
-import { CONFIG_FILENAME } from './consts';
-import { logToConsole } from './logger/logToConsole';
+import { CONFIG_FILENAME } from '../consts';
+import { logToConsole } from '../logger/logToConsole';
+import { TranslatePathsConfig } from '../types';
+import { makePathAbsolute } from '../utils/makePathAbsolute';
+import { readNextConfig } from '../utils/readNextConfig';
 import { makePathsFromPages } from './makePathsFromPages';
-import { TranslatePathsConfig } from './types';
-import { makePathAbsolute } from './utils/makePathAbsolute';
-import { readNextConfig } from './utils/readNextConfig';
 
 const makeTranslatePathsConfig = async () => {
   const { i18n } = await readNextConfig();

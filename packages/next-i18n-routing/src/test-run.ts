@@ -1,9 +1,12 @@
 // TODO: used only for testing purposes
 
-import { parseConfigToNextRewrites } from './parseConfigToNextRewrites';
+import { parseConfigToNextRewrites } from './parsers/parseConfigToNextRewrites';
 
 const testRun = async () => {
-  parseConfigToNextRewrites();
+  const rewrites = parseConfigToNextRewrites();
+
+  // eslint-disable-next-line no-console
+  console.log(rewrites);
 };
 
 testRun();
