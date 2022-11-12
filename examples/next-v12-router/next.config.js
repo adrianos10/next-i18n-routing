@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { withI18nRouting } = require('next-i18n-routing');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -5,4 +8,4 @@ const nextConfig = {
   i18n: { locales: ['en', 'de', 'fr'], defaultLocale: 'en' },
 };
 
-module.exports = nextConfig;
+module.exports = withI18nRouting(nextConfig);

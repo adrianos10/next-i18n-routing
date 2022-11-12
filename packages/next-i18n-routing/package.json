@@ -1,6 +1,7 @@
 {
   "name": "next-i18n-routing",
   "version": "1.0.0",
+  "main": "dist/index.js",
   "bin": {
     "test-run": "dist/test-run.js"
   },
