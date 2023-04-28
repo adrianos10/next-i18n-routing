@@ -1,6 +1,7 @@
-import { NextConfig } from 'next';
 import path from 'path';
 import { cwd } from 'process';
+
+import type { NextConfig } from 'next';
 
 const NEXT_CONFIG_FILENAME = 'next.config.js';
 

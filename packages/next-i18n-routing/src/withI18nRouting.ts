@@ -1,7 +1,7 @@
-import { NextConfig } from 'next';
-
 import { parseConfigToNextRewrites } from './parsers/parseConfigToNextRewrites';
 import { parseRewritesToNextRedirects } from './parsers/parseRewritesToNextRedirects';
+
+import type { NextConfig } from 'next';
 
 const withI18nRouting = async (nextConfig: NextConfig) => {
   const pluginRewrites = parseConfigToNextRewrites() || [];
